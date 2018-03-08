@@ -10,12 +10,21 @@ h1 {
 	font-size: 4em;
 	color: white;
 	text-align: center;
-	
 }
+
+img {
+	margin-bottom: 15%;
+	max-width: 100%;
+}
+
+
+/************************
+ 		BODY
+ ***********************/
 
 .container {
 	display: flex;
-	align-items: center;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-
