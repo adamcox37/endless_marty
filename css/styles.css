@@ -5,13 +5,6 @@ body {
 	background-color: #ffc266;
 }
 
-h1 {
-	font-family: 'Quicksand', sans-serif;
-	font-size: 4em;
-	color: white;
-	text-align: center;
-}
-
 img {
 	margin-bottom: 15%;
 	max-width: 100%;
@@ -22,9 +15,40 @@ img {
  		BODY
  ***********************/
 
+.top-container {
+	background-color: #ffc266;
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+	padding: 300px;
+	text-align: center;
+}
 .container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
+
+/*** Sticky Header ***/
+.header {
+	background-color: #ffc266;
+	margin: 0 auto;
+}
+
+.header h1 {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 6em;
+	color: white;
+	text-align: center;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.sticky + .container{
+	padding-top: 60px;
+}
+
