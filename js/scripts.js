@@ -1,20 +1,40 @@
-// STICKY HEADER //
+// STRINKING HEADER //
+window.addEventListener( 'load', function() {
+  var box = document.getElementById('header'),
+      docHeight = document.documentElement.offsetHeight;
+  
+  window.addEventListener( 'scroll', function() {
+    // normalize scroll position as percentage
+    
 
-// When the user scrolls the page, execute myFunction 
-window.onscroll= function() {myFunction()};
+    // 50 here is half the scroll distance you want the animation to take place in. In this case scroll 0 to 100 is the duration of this animation. 
+    var scrolled = (50-window.scrollY) / ( 50);
 
-// Get the header
-var header= document.getElementById("myHeader");
+    // Limit the change so it doesn't become too small
+    if(scrolled<0.5) {
+    	scrolled = 0.5;
+    } else if (scrolled > 1) {
+    // or too big
+    	scrolled = 1;
+    }
 
-// Get the offset position of the header
-var sticky= header.offsetTop;
+    // computing for new css values
+    var transformValue = 'scale(1,'+scrolled+')',
+        offsetValue = scrolled*-20,
+        paddingValue = scrolled*20,
+        fontSize = 24*scrolled,
+        newHeight = 150*scrolled;
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    header.classList.add("sticky")
-  } else {
-    header.classList.remove("sticky");
-  }
-}
+        //console.log('scrolled: '+scrolled);
+        //console.log('window.scrollY: '+window.scrollY)     
+	      box.style.top = offsetValue+'px';
+	      box.style.fontSize = fontSize+'px';
+	      box.style.lineHeight = newHeight+'px';
+	      box.style.paddingTop = paddingValue+'px';
 
+  }, false);
+  
+}, false);
+
+
+// Infinty Scroll //

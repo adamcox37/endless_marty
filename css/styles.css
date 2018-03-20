@@ -14,41 +14,55 @@ img {
 /************************
  		BODY
  ***********************/
-
-.top-container {
-	background-color: #ffc266;
-	color: white;
-	font-family: 'Quicksand', sans-serif;
-	padding: 300px;
-	text-align: center;
-}
-.container {
+.content {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 25%;
 }
 
-/*** Sticky Header ***/
+/*** Shrinking Header ***/
 .header {
-	background-color: #ffc266;
 	margin: 0 auto;
+	line-height: 150px;
+	color: #fff;
+	background-color: #ffc266;
+	position: fixed;
+	width: 100%;
+	top: 0px;
 }
 
 .header h1 {
 	font-family: 'Quicksand', sans-serif;
-	font-size: 6em;
+	font-size: 3em;
 	color: white;
-	text-align: center;
+ 	text-align: center;
 }
 
-.sticky {
-	position: fixed;
-	top: 0;
-	width: 100%;
+/************************
+ 		MEDIA QUERIES
+ ***********************/
+@media (max-width: 650px) {
+	.content {
+		margin-top: 30%;
+	}
+
+	.header {
+		line-height: 25px;
+	}
+
+	.header h1 {
+		font-size: 1em;
+	}
 }
 
-.sticky + .container{
-	padding-top: 60px;
-}
+
+
+
+
+
+
+
+
 
