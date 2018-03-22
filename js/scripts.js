@@ -23,7 +23,7 @@ window.addEventListener( 'load', function() {
         offsetValue = scrolled*-20,
         paddingValue = scrolled*20,
         fontSize = 24*scrolled,
-        newHeight = 150*scrolled;
+        newHeight = 100*scrolled;
 
         //console.log('scrolled: '+scrolled);
         //console.log('window.scrollY: '+window.scrollY)     
@@ -38,3 +38,53 @@ window.addEventListener( 'load', function() {
 
 
 // Infinty Scroll //
+//Add Img to scroll
+var container= document.getElementById('container');
+
+for(var i=1; i<=5; i++) {
+    var img= document.createElement('img');
+    var src= 'img/marty.jpg';
+    img.src= src;
+    container.appendChild(img);
+}
+
+//Clone Img scroll
+var cloneImg1= document.images[0].cloneNode(false);
+
+//Infinte scroll
+var sliderStartForward= document.images[0].getBoundingClientRect(). bottom;
+var sliderEndForward= document.images[0].getBoundingClientRect().top -5;
+var sliderStartBackwards= document.images[0].getBoundingClientRect().top;
+
+container.scrollBottom= sliderStartForward;
+
+container.addEventListener('scroll', scrolling);
+
+function scrolling() {
+    if(container.scrollBottom < 1) {
+        container.scrollBottom= sliderStartBackwards;
+    }
+}
+
+if(container.scrollBottom > sliderEndForward) {
+    container.scrollBottom = sliderStartForward;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
