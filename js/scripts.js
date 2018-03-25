@@ -50,11 +50,27 @@ for(var i=1; i<=5; i++) {
 
 //Clone Img scroll
 var cloneImg1= document.images[0].cloneNode(false);
+var cloneImg2c1= document.images[1].cloneNode(false);
+var cloneImg2c2= document.images[1].cloneNode(false);
+var cloneImg3c1= document.images[2].cloneNode(false);
+var cloneImg3c2= document.images[2].cloneNode(false);
+var cloneImg4c1= document.images[3].cloneNode(false);
+var cloneImg4c2= document.images[3].cloneNode(false);
+var cloneImg5= document.images[4].cloneNode(false);
+
+container.insertBefore(cloneImg5, document.images[0]);
+container.insertBefore(cloneImg4c1, document.images[0]);
+container.insertBefore(cloneImg3c1, document.images[0]);
+container.insertBefore(cloneImg2c1, document.images[0]);
+container.appendChild(cloneImg1);
+container.appendChild(cloneImg2c2);
+container.appendChild(cloneImg3c2);
+container.appendChild(cloneImg4c2);
 
 //Infinte scroll
-var sliderStartForward= document.images[0].getBoundingClientRect(). bottom;
-var sliderEndForward= document.images[0].getBoundingClientRect().top -5;
-var sliderStartBackwards= document.images[0].getBoundingClientRect().top;
+var sliderStartForward= document.images[4].getBoundingClientRect(). bottom;
+var sliderEndForward= document.images[8].getBoundingClientRect().top -10;
+var sliderStartBackwards= document.images[4].getBoundingClientRect().top;
 
 container.scrollBottom= sliderStartForward;
 
