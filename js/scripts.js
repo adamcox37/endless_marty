@@ -41,7 +41,7 @@ window.addEventListener( 'load', function() {
 //Add Img to scroll
 var container= document.getElementById('container');
 
-for(var i=1; i<=5; i++) {
+for(var i=1; i<=100; i++) {
     var img= document.createElement('img');
     var src= 'img/marty.jpg';
     img.src= src;
